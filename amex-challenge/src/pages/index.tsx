@@ -7,7 +7,7 @@ export default function Home() {
     <div>
       Welcome
       <div>
-        <Link href="/peoplesDirectory">
+        <Link href="/users">
           <button>Go to peoples Directory</button>
         </Link>
       </div>
