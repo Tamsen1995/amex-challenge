@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import axios from "axios";
+import React from "react";
 
 export async function getServerSideProps() {
   const res = await axios.get("https://randomuser.me/api/?results=10");
