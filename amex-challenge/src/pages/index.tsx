@@ -6,14 +6,6 @@ export default function Home() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 py-2">
       <div className="p-6 max-w-sm w-full bg-white rounded-xl shadow-md flex items-center space-x-4">
-        {/* <div className="flex-shrink-0">
-          <Image
-            width={48}
-            height={48}
-            src="/images/icon.png"
-            alt="ChitChat Logo"
-          />
-        </div> */}
         <div>
           <div className="text-xl font-medium text-black">Welcome</div>
 
