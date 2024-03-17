@@ -21,3 +21,13 @@ npm run dev
 ```
 
 Open http://localhost:3000 with your browser to see the result.
+
+## Testing
+
+To run the tests, use the following command:
+
+```bash
+npm test
+```
+
+This will also automatically generate a coverage report in the terminal
