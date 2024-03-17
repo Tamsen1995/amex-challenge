@@ -10,35 +10,33 @@ export async function getServerSideProps() {
 }
 
 export default function UserDirectoryPage({ users }: { users: any[] }) {
-  console.log("user - > ", users[0]); // TESTING
   return (
-    <div className="flex flex-wrap">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
       {users.map((user, index) => (
-        <div
+        <Link
           key={index}
-          className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-4"
+          href={`/users/${user.login.uuid}?name=${user.name.title} ${user.name.first} ${user.name.last}&age=${user.dob.age}&address=${user.location.street.number} ${user.location.street.name}, ${user.location.city}, ${user.location.state}, ${user.location.country}, ${user.location.postcode}&email=${user.email}&dob=${user.dob.date}&phone=${user.phone}&picture=${user.picture.large}`}
+          className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out"
         >
-          <Link
-            href={`/users/${user.login.uuid}?name=${user.name.title} ${user.name.first} ${user.name.last}&age=${user.dob.age}&address=${user.location.street.number} ${user.location.street.name}, ${user.location.city}, ${user.location.state}, ${user.location.country}, ${user.location.postcode}&email=${user.email}&dob=${user.dob.date}&phone=${user.phone}&picture=${user.picture.large}`}
-          >
-            {" "}
-            <div className="flex flex-col items-center text-center bg-gray-200 p-4 rounded-lg">
-              <Image
-                src={user.picture.large}
-                alt="user"
-                width={100}
-                height={100}
-                className="rounded-full"
-              />
-              Name:{" "}
-              <p>
-                {user.name.title} {user.name.last}
-              </p>
+          <Image
+            src={user.picture.large}
+            alt="user"
+            width={100}
+            height={100}
+            className="rounded-full mx-auto mt-4"
+          />
+          <div className="p-6">
+            <h2 className="text-2xl font-bold mb-2">
+              {user.name.title} {user.name.first} {user.name.last}
+            </h2>
+            <div className="text-gray-700 mb-2">
               <span>Age: {user.dob.age}</span>
+            </div>
+            <div className="text-gray-700">
               <span>City: {user.location.city}</span>
             </div>
-          </Link>
-        </div>
+          </div>
+        </Link>
       ))}
     </div>
   );
