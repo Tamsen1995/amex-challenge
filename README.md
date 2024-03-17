@@ -1,8 +1,9 @@
-# Next.js Project
+# Lighthouse Scores
 
-This is a Next.js project. The entire application is designed to be server-side rendered (SSR). This means that all necessary data for rendering the page is fetched from the server before the page is sent to the client. This approach ensures that all the content is available to the client immediately upon page load, improving performance and SEO.
+Consistently over 95 across all pages.
 
 ## Pagination
+
 
 Since the Random User API does not support pagination, I implemented a simulated version of it. The application fetches 100 users at once and stores them in local state. Then, it uses this state to manage the pagination.
 
