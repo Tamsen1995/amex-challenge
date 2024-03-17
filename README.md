@@ -4,9 +4,7 @@ This is a Next.js project. The entire application is designed to be server-side 
 
 ## Server Side Rendering
 
-In Next.js, any page in the `pages` directory becomes a route that gets automatically processed and rendered on the server. For example, `[id].tsx` is a dynamic route that will match any route like `/1`, `/abc`, etc.
-
-In our `[id].tsx` page, we use Next.js's `getServerSideProps` function to fetch the necessary data for the page. This function runs on the server-side every time a request is made for the page. It passes the fetched data as props to our page component, allowing the page to be fully rendered on the server before it is sent to the client. This ensures that the page can load independently and display its content immediately upon refresh, adhering to SSR principles.
+In our `[id].tsx` page, we also use the dynamic route parameter to pass data through the URL. This data is accessible within `getServerSideProps` via the `context` parameter. We can use this to get specific data related to the user even upon refresh. This data is then passed as props to our page component, allowing the page to be fully rendered on the server before it is sent to the client. This ensures that the page can load independently and display its content immediately upon refresh, adhering to SSR principles.
 
 ## Setup
 
