@@ -10,4 +10,20 @@ describe("NavBar component", () => {
     expect(screen.getByText(/Home/)).toBeInTheDocument();
     expect(screen.getByText(/Users/)).toBeInTheDocument();
   });
+
+  it("has correct link hrefs", () => {
+    render(<NavBar />);
+    expect(screen.getByRole("link", { name: /AMEX/ })).toHaveAttribute(
+      "href",
+      "/"
+    );
+    expect(screen.getByRole("link", { name: /Home/ })).toHaveAttribute(
+      "href",
+      "/"
+    );
+    expect(screen.getByRole("link", { name: /Users/ })).toHaveAttribute(
+      "href",
+      "/users"
+    );
+  });
 });
